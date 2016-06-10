@@ -21,14 +21,19 @@ installed **xdotool** _else_ install xdotool using `apt-get install xdotool`.
 ### Usage
 
 ```
-  $ slide2pdf (-u <url>) (-n <num_of_slides>) [--height=<n>] [--width=<n>]
+  $ slide2pdf (-u <url>) [--height=<n>] [--width=<n>]
 
     Options:
       -h --help                show help
       -u --url URL             file-url path
-      -n --num NO_OF_SLIDES    number of slides
       --height=<n>             window height [default: 1600]
       --width=<n>              window width [default: 1200]
 
-  $ slide2pdf -u "file:///path/to/file.html" -n 10
+  $ slide2pdf -u "file:///path/to/file.html"
 ```
+
+### Reference
+[https://www.youtube.com/watch?v=0KQcBa7X7zI&feature=youtu.be](https://www.youtube.com/watch?v=0KQcBa7X7zI&feature=youtu.be)
+
+### License
+MIT
