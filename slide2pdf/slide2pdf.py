@@ -5,12 +5,21 @@ import subprocess
 import time
 
 class slide2pdf:
-    def __init__(self, url, no_of_slides, height, width):
+    def __init__(self, url, height, width):
         self.url = url
-        self.slides = int(no_of_slides)
+        self.slides = self.__no_of_slides()
         self.browser = webdriver.Firefox()
         self.browser.set_window_size(height, width)
         self.browser.get(self.url)
+
+    def __no_of_slides(self):
+        filename = self.url.replace("file://", "")
+        s = open(filename, 'r')
+        content = s.readlines()
+        s.close()
+
+        slide = filter(lambda x: 'class="slide' in x, content)
+        return len(slide)
 
     def snap_shot(self):
         subprocess.call(["xdotool", "key", "Return"])

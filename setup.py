@@ -7,7 +7,7 @@ def read(filename):
 
 setup(
     name='slide2pdf',
-    version='0.1',
+    version='0.2',
     description='slide2pdf is a command line tool to convert html slide presenation to pdf',
     url='https://github.com/vengatlnx/slide2pdf',
     author='Vengatesh.S',
