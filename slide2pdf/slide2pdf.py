@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import os
 import glob
 import subprocess
@@ -7,10 +8,13 @@ import time
 class slide2pdf:
     def __init__(self, url, height, width):
         self.url = url
-        self.slides = self.__no_of_slides()
+        self.slides = self.__no_of_slides() + 1
         self.browser = webdriver.Firefox()
         self.browser.set_window_size(height, width)
         self.browser.get(self.url)
+	time.sleep(1)
+	subprocess.call(["xdotool", "key", "F11"])
+	time.sleep(1)
 
     def __no_of_slides(self):
         filename = self.url.replace("file://", "")
@@ -27,7 +31,7 @@ class slide2pdf:
         for num in range(self.slides):
             self.browser.save_screenshot("frame%02d.png" % num)
             subprocess.call(["xdotool", "key", "space"])
-            time.sleep(1)
+            time.sleep(2)
 
     def convert_pdf(self):
         filepath = os.path.basename(self.url)
