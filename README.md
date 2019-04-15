@@ -5,7 +5,7 @@ document format (pdf).
 
 ### Installation
 
-1. `git clone git@github.com:vengatlnx/slide2pdf.git`
+1. `git clone git@github.com:babuenir/slide2pdf.git`
 2. `cd slide2pdf`
 3. `python setup.py install`
 
